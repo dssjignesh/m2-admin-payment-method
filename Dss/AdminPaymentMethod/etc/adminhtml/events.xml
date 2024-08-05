@@ -14,8 +14,10 @@
 * @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
 */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="checkout_submit_all_after">
-        <observer name="dss_auto_invoice_sales_order_save_after" instance="Dss\AdminPaymentMethod\Observer\AutoCreateInvoiceandShipment"/>
+        <observer name="dss_auto_invoice_sales_order_save_after" 
+            instance="Dss\AdminPaymentMethod\Observer\AutoCreateInvoiceandShipment"/>
     </event>
 </config>

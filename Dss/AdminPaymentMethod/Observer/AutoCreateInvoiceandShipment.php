@@ -34,22 +34,21 @@ use Magento\Sales\Model\Convert\Order as ConvertOrder;
 
 /**
  * Class AutoCreateInvoice
- *
  */
 class AutoCreateInvoiceandShipment implements ObserverInterface
 {
     /**
      * AutoCreateInvoice constructor.
      *
-     * @param InvoiceService $invoiceService
-     * @param ManagerInterface $messageManager
-     * @param TransactionFactory $transaction
-     * @param ConvertOrder $convertOrder
-     * @param ShipmentNotifier $shipmentNotifier
-     * @param ProductMetadataInterface $productMetadata
-     * @param SearchCriteriaBuilder $searchCriteriaBuilder
+     * @param InvoiceService               $invoiceService
+     * @param ManagerInterface             $messageManager
+     * @param TransactionFactory           $transaction
+     * @param ConvertOrder                 $convertOrder
+     * @param ShipmentNotifier             $shipmentNotifier
+     * @param ProductMetadataInterface     $productMetadata
+     * @param SearchCriteriaBuilder        $searchCriteriaBuilder
      * @param OrderItemRepositoryInterface $itemRepository
-     * @param Notifier $invoiceNotifier
+     * @param Notifier                     $invoiceNotifier
      */
     public function __construct(
         protected InvoiceService $invoiceService,
@@ -61,12 +60,13 @@ class AutoCreateInvoiceandShipment implements ObserverInterface
         protected SearchCriteriaBuilder $searchCriteriaBuilder,
         protected OrderItemRepositoryInterface $itemRepository,
         protected Notifier $invoiceNotifier
-    ) {}
+    ) {
+    }
 
     /**
      * Execute
      *
-     * @param Observer $observer
+     * @param  Observer $observer
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     public function execute(Observer $observer): void
@@ -88,8 +88,8 @@ class AutoCreateInvoiceandShipment implements ObserverInterface
     /**
      * Create invoice
      *
-     * @param \Dss\AdminPaymentMethod\Model\AdminPaymentMethod $payment
-     * @param \Magento\Sales\Model\Order $order
+     * @param  \Dss\AdminPaymentMethod\Model\AdminPaymentMethod $payment
+     * @param  \Magento\Sales\Model\Order                       $order
      * @return void |null
      * @throws \Exception
      */
@@ -124,8 +124,8 @@ class AutoCreateInvoiceandShipment implements ObserverInterface
     /**
      * Create shipment
      *
-     * @param \Dss\AdminPaymentMethod\Model\AdminPaymentMethod $payment
-     * @param \Magento\Sales\Model\Order $order
+     * @param  \Dss\AdminPaymentMethod\Model\AdminPaymentMethod $payment
+     * @param  \Magento\Sales\Model\Order                       $order
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     private function createShipment($payment, $order): void
@@ -176,8 +176,8 @@ class AutoCreateInvoiceandShipment implements ObserverInterface
     /**
      * Display notified
      *
-     * @param \Magento\Sales\Model\Order $order
-     * @param \Dss\AdminPaymentMethod\Model\AdminPaymentMethod $payment
+     * @param  \Magento\Sales\Model\Order                       $order
+     * @param  \Dss\AdminPaymentMethod\Model\AdminPaymentMethod $payment
      * @return null
      * @throws \Exception
      */
@@ -186,7 +186,7 @@ class AutoCreateInvoiceandShipment implements ObserverInterface
         try {
             if ($payment->getConfigData('createinvoice') && $payment->getConfigData('createshipment')) {
                 return $order->addStatusHistoryComment(__('Automatically Invoice and Shipment By Dss Invoice Shipment'))
-                ->save();
+                    ->save();
             } elseif ($payment->getConfigData('createinvoice')) {
                 return $order->addStatusHistoryComment(__('Automatically Invoice By Dss Invoice'))->save();
             } elseif ($payment->getConfigData('createshipment')) {
@@ -203,7 +203,7 @@ class AutoCreateInvoiceandShipment implements ObserverInterface
     /**
      * Set items order when send email shipping
      *
-     * @param Order $order
+     * @param  Order $order
      * @return void
      */
     public function setItemsOrder($order): void

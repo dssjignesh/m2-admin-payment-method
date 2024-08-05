@@ -11,14 +11,14 @@
 * @category  Dss
 * @package   Dss_AdminPaymentMethod
 * @author    Extension Team
-* @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
 */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-	<module name="Dss_AdminPaymentMethod">
-		<sequence>
-			<module name="Magento_Sales"/>
-			<module name="Magento_Payment"/>
-		</sequence>
-	</module>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Dss_AdminPaymentMethod">
+        <sequence>
+            <module name="Magento_Sales"/>
+            <module name="Magento_Payment"/>
+        </sequence>
+    </module>
 </config>

@@ -28,13 +28,14 @@ class PreSelect
      */
     public function __construct(
         private AdminPaymentMethod $model
-    ) {}
+    ) {
+    }
 
     /**
      * After get select method code
      *
-     * @param \Magento\Sales\Block\Adminhtml\Order\Create\Billing\Method\Form $block
-     * @param string $result
+     * @param  \Magento\Sales\Block\Adminhtml\Order\Create\Billing\Method\Form $block
+     * @param  string                                                          $result
      * @return bool|string
      */
     public function afterGetSelectedMethodCode(
