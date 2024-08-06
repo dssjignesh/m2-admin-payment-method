@@ -25,7 +25,7 @@
                         showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
                     <label><![CDATA[Enabled]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment><![CDATA[Version 1.0.4]]></comment>
+                    <comment><![CDATA[Version 0.0.1]]></comment>
                 </field>
                 <field id="title" translate="label" type="text" sortOrder="10"
                         showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
