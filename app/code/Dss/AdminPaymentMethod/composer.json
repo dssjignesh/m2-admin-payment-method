@@ -1,8 +1,15 @@
 {
-    "name": "dss/admin-payment-method",
+    "name": "dss/m2-admin-payment-method",
     "description": "Dss Admin Payment Method Module",
     "type": "magento2-module",
     "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Extension Team",
+            "email": "info@digitsoftsol.com",
+            "homepage": "https://www.digitsoftsol.com"
+        }
+    ],
     "license": [
         "OSL-3.0",
         "AFL-3.0"
